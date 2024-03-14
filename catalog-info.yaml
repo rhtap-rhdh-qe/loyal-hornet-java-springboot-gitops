@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: loyal-hornet-java-springboot-gitops
+  description: This is GitOps manifest for loyal-hornet-java-springboot   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-name: loyal-hornet-java-springboot
+    janus-idp.io/tekton: loyal-hornet-java-springboot 
+    backstage.io/kubernetes-id: loyal-hornet-java-springboot 
+    backstage.io/techdocs-ref: dir:. 
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:loyal-hornet-java-springboot
